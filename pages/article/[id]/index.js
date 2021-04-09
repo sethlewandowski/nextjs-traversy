@@ -15,20 +15,6 @@ const article = ({ article }) => {
   )
 }
 
-export const getStaticPaths = async (context) => {
-  const res = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${context.params.id}`
-  )
-
-  const article = await res.json()
-
-  return {
-    props: {
-      article,
-    },
-  }
-}
-
 export const getStaticPaths = async () => {
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts`)
 
